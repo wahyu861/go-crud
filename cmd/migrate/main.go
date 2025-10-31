@@ -11,12 +11,14 @@ func main() {
 
 	err := config.DB.AutoMigrate(
 		&models.User{},
-		&models.Store{},
-		&models.Address{},
+		&models.Toko{},
+		&models.Alamat{},
 		&models.Category{},
-		&models.Product{},
-		&models.Transaction{},
-		&models.TransactionItem{},
+		&models.Produk{},
+		&models.FotoProduk{},
+		&models.LogProduk{},
+		&models.Trx{},
+		&models.DetailTrx{},
 	)
 
 	if err != nil {
