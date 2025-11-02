@@ -41,14 +41,14 @@ func InitRoutes(e *echo.Echo) {
 	}
 
 	// ====== ROUTE PRODUCTS ======
-	// products := api.Group("/products")
-	// {
-	// 	products.GET("", controllers.GetAllProducts)     
-	// 	products.GET("/:id", controllers.GetProductByID) 
-	// 	products.POST("", controllers.CreateProduct)     
-	// 	products.PUT("/:id", controllers.UpdateProduct)  
-	// 	products.DELETE("/:id", controllers.DeleteProduct) 
-	// }
+	products := api.Group("/products")
+	{
+		products.GET("", controllers.GetAllProducts)     
+		products.GET("/:id", controllers.GetProductByID) 
+		products.POST("", controllers.CreateProduct)     
+		products.PUT("/:id", controllers.UpdateProduct)  
+		products.DELETE("/:id", controllers.DeleteProduct) 
+	}
 
 	// ====== ROUTE ALAMAT ======
 	alamat := api.Group("/alamat")
@@ -70,13 +70,14 @@ func InitRoutes(e *echo.Echo) {
 	}
 
 	// ====== ROUTE KATEGORI (admin only) ======
-	// categories := api.Group("/categories")
-	// {
-	// 	categories.GET("", controllers.GetAllCategories)      
-	// 	categories.POST("", controllers.CreateCategory)       
-	// 	categories.PUT("/:id", controllers.UpdateCategory)    
-	// 	categories.DELETE("/:id", controllers.DeleteCategory) 
-	// }
+	categories := api.Group("/categories")
+	{
+		categories.GET("", controllers.GetAllCategories)      
+		categories.GET("/:id", controllers.GetCategoryByID)      
+		categories.POST("", controllers.CreateCategory)       
+		categories.PUT("/:id", controllers.UpdateCategory)    
+		categories.DELETE("/:id", controllers.DeleteCategory) 
+	}
 
 	// ====== ROUTE TRANSAKSI ======
 	// transactions := api.Group("/transactions")
