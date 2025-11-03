@@ -18,4 +18,5 @@ type LogProduk struct {
 	// Relasi
 	Toko     *Toko     `gorm:"foreignKey:IDToko" json:"toko,omitempty"`
 	Category *Category `gorm:"foreignKey:IDCategory" json:"category,omitempty"`
+	Photos   []FotoProduk   `gorm:"foreignKey:IDProduk;references:IDProduk"`
 }

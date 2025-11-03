@@ -80,11 +80,10 @@ func InitRoutes(e *echo.Echo) {
 	}
 
 	// ====== ROUTE TRANSAKSI ======
-	// transactions := api.Group("/transactions")
-	// {
-	// 	transactions.GET("/my", controllers.GetMyTransactions)       
-	// 	transactions.POST("", controllers.CreateTransaction)         
-	// 	transactions.GET("/:id", controllers.GetTransactionByID)     
-	// 	transactions.PUT("/:id/status", controllers.UpdateStatusTransaction) 
-	// }
+	transactions := api.Group("/transactions")
+	{   
+		transactions.GET("", controllers.GetAllTransactions)  
+		transactions.POST("", controllers.CreateTransaction)         
+		transactions.GET("/:id", controllers.GetTransactionByID)     
+	}
 }
